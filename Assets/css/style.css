@@ -1,0 +1,77 @@
+body{
+	background: rgb(255,255,255);
+
+}
+
+#page_title{
+	color : white;
+	font-weight: bold;
+	font-size: 3em;
+	height : 70px;
+}
+.tree{
+	margin-top : 4%;
+	color: white;
+}
+.divimgtitle{
+	margin-top:6px;
+	margin-left : 6%;
+	display: inline-block;
+	background: rgb(255,255,255);
+	width : 60px;
+	height : 60px;
+	border-radius : 30px;
+}
+#title_text{
+	margin-top:20px;
+}
+.imgtitle{
+	margin-left : 13px;
+	margin-top : -5px;
+}
+.container{
+	border: 1px solid gray;
+	/*width: 600px;*/
+	padding: 20px;
+	padding-top: 10px;
+	border-radius: 5px;
+	background-color: rgb(230,230,230);
+}
+.edit_fiche{
+	margin:9%;
+}
+.btn{
+	font-size: 1em;
+	padding: 6px;
+}
+.modal-header
+{
+	background: rgb(2,139,186);
+	font-size: 1.5em;
+	color:white;
+}
+.modal-title
+{
+	font-size: 1.5em;
+	color : black;
+	font-weight: bold;
+}
+.container_resultat
+{
+	height : 600px;
+	background: rgb(255,255,255);
+	border-radius: 15px;
+}
+thead{
+	background-color: rgb(55,55,57);
+	color: white;
+}
+.ligne_result {
+	text-decoration: underline;
+}
+a {
+	color: rgb(26,47,174);
+}
+li {
+	color: rgb(26,47,174);
+}
