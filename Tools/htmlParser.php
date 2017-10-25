@@ -7,6 +7,11 @@ class htmlParser {
 	function __construct($html_string){
 		$this->html_string = $html_string;
 	}
+	/**
+	 * [getNodes getNode by node]
+	 * @param  [type] $tag [description]
+	 * @return [type]      [description]
+	 */
 	public function getNodes($tag){
 		$data = [];
 		if(preg_match_all("'<".$tag."(.*?>|>)(.*?)</".$tag.">'si",$this->html_string, $matches, PREG_SET_ORDER))
@@ -21,6 +26,11 @@ class htmlParser {
 			return $data;
 		}
 	}
+	/**
+	 * [getAttr get attribut]
+	 * @param  [type] $attr [description]
+	 * @return [type]       [description]
+	 */
 	public function getAttr($attr){
 		if(preg_match_all("'<(.*?)".$attr."=\"(.*?)\"(.*?>|>)(.*?)</(.*?)>'si",$this->html_string, $matches, PREG_SET_ORDER))
 		{
@@ -30,6 +40,10 @@ class htmlParser {
 			return null;
 		}
 	}
+	/**
+	 * [getText get node text]
+	 * @return [type] [description]
+	 */
 	public function getText(){
 		$patterns=array("'<(.*?)>'si","'</(.*?)>'si");
 		$result = preg_replace($patterns, "", $this->html_string);;
