@@ -10,8 +10,12 @@ class controleurAcceuil extends Controleur {
 		if(!is_null($this->post('critere')))
 		{
 			$critere = $this->post('critere');
-			$html_content = $this->modeleHTTPAcceuil->getSearchResults($critere);
 			$webo_url = "http://wiki.webo-facto.com";
+			$html_content = $this->modeleHTTPAcceuil->getSearchResults($critere);
+			/**
+			 * [$parser utilisation d'un outil permettant de parser le resultat]
+			 * @var htmlParser
+			 */
 			$parser = new htmlParser($html_content);
 			$dtNodes = $parser->getNodes("dt");
 			$result = [];
