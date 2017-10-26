@@ -5,7 +5,7 @@ class ModeleHTTPAcceuil extends ModeleHTTP {
 		$htmlData = $this->getData($webo_url,array('q'=>$critere));
 		$htmlData = $this->getData($webo_url."/resultspage-2.html");
 		/**
-		 * [$parser instance d'un objet permettant de parser le resultat html en taableau contenant le résultat de la recherche]
+		 * [$parser un objet permettant de parser le resultat html en taableau contenant le résultat de la recherche]
 		 * @var htmlParser
 		 */
 		$parser = new htmlParser($htmlData);
