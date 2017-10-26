@@ -13,7 +13,6 @@ class ModeleHTTPAcceuil extends ModeleHTTP {
 		$result = [];
 		foreach ($dtNodes as $dt) {
 			$aData = $dt->getNodes("a");
-			//Enlever le numero dans le texte obtenu pour l'affichage
 			$title = $dt->getText();
 			$i = strpos($title, ". ");
 			$title = substr($title,$i+1,count($title)-2);
