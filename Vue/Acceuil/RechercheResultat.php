@@ -38,7 +38,7 @@
 	    				foreach ($resultat as $res) {
 	    			?>
 	    				 <tr>
-	       					 <td class="ligne_result"><li><a href="<?php echo $res["lien"];?>" target="_blank"><?php echo $res["title"];?></a></li></td>
+	       					 <td ><li class="li_title"><a class="ligne_result" href="<?php echo $res["lien"];?>" target="_blank"><?php echo $res["title"];?></a></li></br><ul><li ><a class="li_url" target="_blank" href="<?php echo $res["lien"];?>"><?php echo $res["lien"];?></a></li></ul></td>
 	       				 </tr>
 	    			<?php
 	    				}
