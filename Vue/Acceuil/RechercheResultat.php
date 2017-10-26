@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Webo - Moteur de recherche</title>
+	<title>Webo-facto | Moteur de recherche</title>
 	<link rel="stylesheet" type="text/css" href="Assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="Assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="Assets/css/jquery.autocomplete.css">
@@ -28,7 +28,7 @@
     	<div class="col-sm-10 form-group container_resultat" >
     		<div style="width:90%;margin:center;margin-top:20px;color:black;font-size: 1.4em;">
     		<?php if(count($resultat)>0){
-    			echo "Résultat pour \"".$critere."\"";
+    			echo "Résultats pour le mots clé \"".$critere."\"";
     		?>
 
     			 <table class="table table-striped">
@@ -38,7 +38,7 @@
 	    				foreach ($resultat as $res) {
 	    			?>
 	    				 <tr>
-	       					 <td class="ligne_result"><li><a href="<?php echo $res["lien"];?>"><?php echo $res["title"];?></a></li></td>
+	       					 <td class="ligne_result"><li><a href="<?php echo $res["lien"];?>" target="_blank"><?php echo $res["title"];?></a></li></td>
 	       				 </tr>
 	    			<?php
 	    				}
@@ -48,7 +48,7 @@
 	    		 </table>
     		<?php } else
     			{
-    				echo "Aucun résultat trouvé pour \"".$critere."\"";
+    				echo "Aucun résultat trouvé pour le mots clé \"".$critere."\"";
     			}
     		?>
     		

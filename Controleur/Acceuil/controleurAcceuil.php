@@ -10,19 +10,10 @@ class controleurAcceuil extends Controleur {
 		if(!is_null($this->post('critere')))
 		{
 			$critere = $this->post('critere');
-			$webo_url = "http://wiki.webo-facto.com";
-			$html_content = $this->modeleHTTPAcceuil->getSearchResults($critere);
+			$result = $this->modeleHTTPAcceuil->getWeboSearchResults($critere);
 			/**
-			 * [$parser utilisation d'un outil permettant de parser le resultat]
-			 * @var htmlParser
+			 * Insertion du critere de recherche dans la base de données pour l'autocompletion
 			 */
-			$parser = new htmlParser($html_content);
-			$dtNodes = $parser->getNodes("dt");
-			$result = [];
-			foreach ($dtNodes as $dt) {
-				$aData = $dt->getNodes("a");
-				if(isset($aData[0])) $result[] = array("title"=>$dt->getText(),"lien"=>$webo_url.$aData[0]->getAttr("href"));
-			}
 			if(count($result)>0) $this->modeleDBAcceuil->insertCritere(array("critere"=>$critere));
 			$this->genererVue("RechercheResultat",array("resultat"=>$result,"critere"=>$critere));
 		}
